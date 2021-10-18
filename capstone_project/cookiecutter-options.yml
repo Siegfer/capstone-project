@@ -1,0 +1,9 @@
+default_context:
+    project_name: "capstone_project"
+    app_name: "leaf_it_to_me"
+    python_version: "3.8"
+    admin_user_username: "siegfer"
+    admin_user_email: "nicholasquoctran@gmail.com"
+    admin_user_password: "nicky1988"
+    use_celery: "yes"
+    wsgi_server: "gunicorn"
