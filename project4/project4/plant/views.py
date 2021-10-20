@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """User views."""
+import json
+
+import requests
 from flask import Blueprint, render_template
 from flask_login import login_required
-import requests
-import json
 
 blueprint = Blueprint("plant", __name__, url_prefix="/users", static_folder="../static")
 

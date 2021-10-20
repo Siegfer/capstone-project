@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """Plant models."""
 
-from leaf_it_to_me.database import db, Column, PkModel
+from project4.database import Column, PkModel, db
+
 
 class Plant(PkModel):
+    """ model for plant """
     __tablename__ = "plants"
     AlternateName = Column(db.String(80), nullable=True, default=None)
     Edible = Column(db.String(80), nullable=True, default=None)
