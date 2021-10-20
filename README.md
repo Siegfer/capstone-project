@@ -1,8 +1,7 @@
 # Leaf It To Me
 ## Project - 4
 ### language use
-- Python backend
-- React frontend
+- Python & Flask
 # user stories
 - new user: sign up
 - authorize user: log in
