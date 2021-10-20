@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Click commands."""
+import json
 import os
 from glob import glob
 from subprocess import call
@@ -63,3 +64,13 @@ def lint(fix_imports, check):
         execute_tool("Fixing import order", "isort", *isort_args)
     execute_tool("Formatting style", "black", *black_args)
     execute_tool("Checking code style", "flake8")
+
+@click.command()
+def seed(filename):
+    with open(filename, "wb") as f:
+        data = json.load(f)
+        plants = [Plant(**p) for p in data]
+        db.session.bulk_save_objects(plants)
+        
+if __name__ == "__main__":
+    seed("test_scrape_dump.json")
