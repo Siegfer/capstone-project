@@ -1,0 +1,8 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+	{% for games in data %}
+	<span>{{ games['name'] }}</span>
+	<p>{{ games['description'] }}</p>
+	{% endfor %}
+</div>
+{% endblock %}
