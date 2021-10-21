@@ -6,8 +6,10 @@
 - new user: sign up
 - authorize user: log in
 - authorize user: search database
-- authorize user: add an item to favorite list
-- authorize user: remove an item from favorite list
+- authorize user: add note
+- authorize user: remove note
+- authorize user: add an item to a list
+- authorize user: remove an item from list
 - authorize user: edit profile
 
 # wire frame
