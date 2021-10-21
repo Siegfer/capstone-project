@@ -25,7 +25,6 @@ def create_app():
     create_database(app)
     
     def seed(filename):
-        # s = db.session()
         with open(filename) as f:
             data = json.load(f)
             plants = [Plant(**p) for p in data.values()]

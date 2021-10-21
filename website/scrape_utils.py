@@ -1,8 +1,6 @@
 import codecs
 import json
 from typing import Dict, List
-
-import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from tqdm import tqdm
@@ -23,14 +21,14 @@ def scrape_for_all_plant_routes(link):
     return results
 
 
-def format_column_name(name: str) -> str:
+def format_column_name(name):
     arr = name.split()
     arr = [word.capitalize() for word in arr if word != "Help"]
     col = "".join(arr)
     return col
 
 
-def scrape_plant_details(routes: List[str]) -> Plants:
+def scrape_plant_details(routes):
     data: Plants = {}
     for route in routes:
         plant_url = f"https://permapeople.org{route}"
@@ -52,7 +50,7 @@ def scrape_plant_details(routes: List[str]) -> Plants:
     return data
 
 
-def scrape_all_pages(start: int, end: int, filename: str) -> None:
+def scrape_all_pages(start: int, end: int, filename: str):
     base_uri = "https://permapeople.org/search?sort=name_asc"
     main_dictionary = {}
     with open(filename, "wb") as f:
@@ -60,8 +58,6 @@ def scrape_all_pages(start: int, end: int, filename: str) -> None:
             pagination_uri = base_uri + f"&page={i}"
             routes = scrape_for_all_plant_routes(pagination_uri)
             plants = scrape_plant_details(routes)
-            # Do whatever you want for the "JSON" page_deets
-            # Save to .json > Export as data frame, whatever
             main_dictionary = {**main_dictionary, **plants}
         json.dump(
             main_dictionary,
