@@ -1,6 +1,6 @@
 import codecs
 import json
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 import pandas as pd
 import requests
@@ -10,9 +10,7 @@ from tqdm import tqdm
 PlantDetails = Dict[str, str]
 Plants = Dict[str, PlantDetails]
 
-def scrape_for_all_plant_routes(
-    link: str,
-) -> List[str]:
+def scrape_for_all_plant_routes(link):
     page = requests.get(link)
     soup = BeautifulSoup(page.content, "html.parser")
     table = soup.find("tbody")

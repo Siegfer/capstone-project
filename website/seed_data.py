@@ -1,7 +1,7 @@
 import json
 
-from extensions import db
-from plant.models import Plant
+from . import db
+from .models import Plant
 
 
 def seed(filename: str) -> None:
