@@ -27,7 +27,7 @@ class Plant(db.Model):
     Name = db.Column(db.String(80))
     GermanName = db.Column(db.String(80), nullable=True, default=None)
     PlantsForAFuture = db.Column(db.String(80))
-    ScientificName = db.Column(db.String(80), unique=True)
+    ScientificName = db.Column(db.String(80))
     SoilType = db.Column(db.String(80))
     SoilPh = db.Column(db.String(80), nullable=True, default=None)
     UsdaHardinessZone = db.Column(db.String(80))
