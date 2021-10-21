@@ -2,9 +2,7 @@ import json
 import click
 from os import path
 from flask import Flask
-from flask.cli import with_appcontext
 from flask_login import LoginManager
-from flask_seeder import FlaskSeeder
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -26,8 +24,6 @@ def create_app():
 
     create_database(app)
     
-    seeder = FlaskSeeder()
-    seeder.init_app(app, db)
     login_manager = LoginManager()
     login_manager.login_view = "auth.login"
     login_manager.init_app(app)
