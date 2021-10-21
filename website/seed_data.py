@@ -1,10 +1,9 @@
 import json
 
 from . import db
-from .models import Plant
+from models import Plant
 
-
-def seed(filename: str) -> None:
+def seed(filename):
     s = db.session()
     with open(filename, "wb") as f:
         data = json.load(f)
@@ -12,5 +11,4 @@ def seed(filename: str) -> None:
         s.bulk_save_objects(plants)
 
 
-if __name__ == "__main__":
-    seed("test_scrape_dump.json")
+
