@@ -7,11 +7,8 @@ from flask_login import LoginManager
 from flask_seeder import FlaskSeeder
 from flask_sqlalchemy import SQLAlchemy
 
-
-
 db = SQLAlchemy()
 DB_NAME = "capstone-project.db"
-SEED_FILEPATH="/Users/siegfer/Documents/Class/Unit-4/Capstone Project/capstone-project/website/test_scrape_dump.json"
 
 def create_app():
     app = Flask(__name__)
@@ -25,7 +22,7 @@ def create_app():
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
 
-    from .models import User, Note, Plant
+    from .models import User
 
     create_database(app)
     
