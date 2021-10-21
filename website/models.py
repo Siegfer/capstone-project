@@ -68,7 +68,6 @@ class Plant(db.Model):
     YearsToBear = db.Column(db.String(80), nullable=True, default=None)
     Genus = db.Column(db.String(80), nullable=True, default=None)
     SeedDepth = db.Column(db.String(80), nullable=True, default=None)
-    
     Warning = db.Column(db.String(80), nullable=True, default=None)
     Spacing = db.Column(db.String(80), nullable=True, default=None)
     PropagationMethod = db.Column(db.String(80), nullable=True, default=None)
