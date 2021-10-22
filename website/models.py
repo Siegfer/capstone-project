@@ -1,13 +1,24 @@
 from . import db
-from flask_login import UserMixin
 from sqlalchemy.sql import func
-
+from flask_login import UserMixin
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
+class Plant_list(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    Name = db.Column(db.String(80))
+    ScientificName = db.Column(db.String(80))
+    WaterRequirement = db.Column(db.String(80))
+    LightRequirement = db.Column(db.String(80))
+    Growth = db.Column(db.String(10), nullable=True, default=None)
+    Edible = db.Column(db.String(80), nullable=True, default=None)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    # plants = db.relationship("Plant")
+
 
 
 class Plant(db.Model):

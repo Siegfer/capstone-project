@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<div class="card-group">
+	{% for plant in plant_list%}
+	<div class="col-sm-6">
+		<div class="card">
+			<div class="card-body" style="position: relative">
+				<h2 class="card-title">{{plant.Name}}</h2>
+				<h5 class="card-text">{{plant.ScientificName}}</h5>
+				<a href="{{plant.Wikipedia}}">More details...</a>
+				<!-- <a
+					href="{{plant.Wikipedia}}"
+					class="btn btn-primary"
+					style="top: 50%; transform: translateX(87%)"
+					>See more details...</a
+				> -->
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
+<!-- <button type="button" class="close" onClick="deleteNoteplant.id ">
+			<span aria-hidden="true">&times;</span>
+		</button> -->
