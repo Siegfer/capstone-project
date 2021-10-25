@@ -6,6 +6,7 @@ from flask import Blueprint, render_template, request, flash, jsonify
 
 views = Blueprint("views", __name__)
 
+
 @views.route("/", methods=["GET", "POST"])
 @login_required
 def home():
@@ -22,17 +23,17 @@ def home():
 
     return render_template("home.html", user=current_user)
 
+
 @views.route("/plants", methods=["GET"])
 @login_required
 def all_plants():
-    # Do the search for user plants here.
+    # Do the search for user plants here. Include this once association is made
     # Ex:   db.session.query('FROM plant JOIN user SELECT * WHERE plant.user_id == user.id')
     results = db.session.query(Plant)
-    print(results)
     plant_list = []
     for result in results:
         plant = {
-            "id": result.id, 
+            "id": result.id,
             "Name": result.Name,
             "Growth": result.Growth,
             "ScientificName": result.ScientificName,
@@ -44,10 +45,9 @@ def all_plants():
             "EdibleParts": result.EdibleParts,
             "Family": result.Family,
             "LifeCycle": result.LifeCycle,
-            }
+        }
         plant_list.append(plant)
-    # return json.dumps(plant_list)
-    
+
     return render_template("plant.html", user=current_user, plant_list=plant_list)
 
 

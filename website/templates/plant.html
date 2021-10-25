@@ -4,21 +4,20 @@
 	<div class="col-sm-6">
 		<div class="card">
 			<div class="card-body" style="position: relative">
-				<h2 class="card-title">{{plant.Name}}</h2>
-				<h5 class="card-text">{{plant.ScientificName}}</h5>
+				<h1 class="card-title">{{plant.Name}}</h1>
+				<h3 class="card-text">{{plant.ScientificName}}</h3>
+				<h6 class="card-text">Light Requirement: {{plant.LightRequirement}}</h6>
+				<h6 class="card-text">Water Requirement: {{plant.WaterRequirement}}</h6>
+				<h6 class="card-text">Soil Type: {{plant.SoilType}}</h6>
+				<h6 class="card-text">Edible: {{plant.Edible}}</h6>
+				<h6 class="card-text">Edible Parts: {{plant.EdibleParts}}</h6>
 				<a href="{{plant.Wikipedia}}">More details...</a>
-				<!-- <a
-					href="{{plant.Wikipedia}}"
-					class="btn btn-primary"
-					style="top: 50%; transform: translateX(87%)"
-					>See more details...</a
-				> -->
 			</div>
 		</div>
 	</div>
 	{% endfor %}
 </div>
 {% endblock %}
-<!-- <button type="button" class="close" onClick="deleteNoteplant.id ">
+<!-- <button type="button" class="close" onClick="deletePlant.id ">
 			<span aria-hidden="true">&times;</span>
 		</button> -->
